@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+.loading-page-div {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    text-align: center;
+}
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background: #FEFBF6;
+
+    text-align: center;
+}
+
+.title {
+    font-size: 5rem;
+    font-family: 'Kanit', sans-serif;
+    letter-spacing: 0.4rem;
+    color: #FFAE6D;
+}
+
+.desc {
+    font-size: 3rem;
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 0.3rem;
+    margin-top: 2.3rem;
+    margin-top: 2.3rE38B29em;
+    color: #DEB6AB;
+}
+
+button {
+    margin-top: 5rem;
+    padding: 1.5rem 4rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right top, #39df4c, #35e64a, #2fed47, #29f544, #21fc41);
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-image: linear-gradient(to right top, #39df74, #37dc73, #34d972, #32d670, #2fd36f);
+    transform: translateY(-0.4rem);
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 0.3rem;
+    color: #fff;
+}
+
+
+.hide--div {
+    display: none;
+}
