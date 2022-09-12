@@ -20,7 +20,7 @@ const register = async (req, res) => {
         to: req.body.email,
         from: 'somenathchoudhury212@gmail.com',
         subject: 'Welcome to Jobs API',
-        text: `We welcome you ${user.fullname} in our community. We hope we will be able to help you find potential candidates for your organization`
+        text: `We welcome you ${user.fullname} in our community. We hope we will be able to help you find potential candidates for your organization.`
     }
 
     await sgMail.send(emailStructure);

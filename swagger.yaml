@@ -1,0 +1,271 @@
+openapi: 3.0.0
+info:
+  title: Jobs API
+  description: >-
+    With the help of this API, a recruiter who wants to hire candidates for his/her company can use this API. Here, in this API, the recruiter first needs to register for an account. Then, the recruiter can create as many job openings as possible and all the job openings created by the recruiter will be stored in his/her account.
+
+
+    The recruiter also has the option of editing a particular job posting as well as deleting a particular job.
+  contact: {}
+  version: "1.0"
+servers:
+  - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+    variables: {}
+paths:
+  /auth/register:
+    post:
+      tags:
+        - Users
+      summary: Register User
+      description: The work of this route is to let a brand new user register for a new account.
+      operationId: RegisterUser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/RegisterUserRequest"
+                - example:
+                    fullname: SomenathSeven
+                    email: somenathchoudhury717@gmail.com
+                    password: "123456"
+            example:
+              fullname: SomenathSeven
+              email: somenathchoudhury717@gmail.com
+              password: "123456"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+      servers:
+        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+          variables: {}
+  /auth/login:
+    post:
+      tags:
+        - Users
+      summary: Login User
+      description: The work of this route is to let a user login for a brand new account.
+      operationId: LoginUser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/LoginUserRequest"
+                - example:
+                    email: somenathchoudhury35@gmail.com
+                    password: "123456"
+            example:
+              email: somenathchoudhury35@gmail.com
+              password: "123456"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+      servers:
+        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+          variables: {}
+  /jobs:
+    get:
+      tags:
+        - Jobs
+      summary: Get all jobs of an authenticated user
+      description: The work of this route is to let an authenticated user get all the job openings added by him/her.
+      operationId: Getalljobsofanauthenticateduser
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+          variables: {}
+    post:
+      tags:
+        - Jobs
+      summary: Create a new Job by Authenticated User
+      description: The work of this route is to let an authenticated user create a brand new job opening.
+      operationId: CreateanewJobbyAuthenticatedUser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/CreateanewJobbyAuthenticatedUserRequest"
+                - example:
+                    company: microsoft
+                    position: position of som5 one in infosys
+            example:
+              company: microsoft
+              position: position of som5 one in infosys
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+          variables: {}
+  /jobs/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The ID of the particular job
+    get:
+      tags:
+        - Jobs
+      summary: Get single jobs of an authenticated user
+      description: The work of this route is to let an authenticated user get a particular job opening by its ID.
+      operationId: Getsinglejobsofanauthenticateduser
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+          variables: {}
+    patch:
+      tags:
+        - Jobs
+      summary: Update job by an authenticated user
+      description: The work of this route is to let an authenticated user update a particular job opening.
+      operationId: Updatejobbyanauthenticateduser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/UpdatejobbyanauthenticateduserRequest"
+                - example:
+                    company: adobe
+                    position: manager at adobe
+            example:
+              company: adobe
+              position: manager at adobe
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+          variables: {}
+    delete:
+      tags:
+        - Jobs
+      summary: Delete job by an authenticated user
+      description: The work of this route is to let an authenticated user delete a particular job opening.
+      operationId: Deletejobbyanauthenticateduser
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+          variables: {}
+components:
+  schemas:
+    RegisterUserRequest:
+      title: RegisterUserRequest
+      required:
+        - fullname
+        - email
+        - password
+      type: object
+      properties:
+        fullname:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        fullname: SomenathSeven
+        email: somenathchoudhury717@gmail.com
+        password: "123456"
+    LoginUserRequest:
+      title: LoginUserRequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: somenathchoudhury35@gmail.com
+        password: "123456"
+    CreateanewJobbyAuthenticatedUserRequest:
+      title: CreateanewJobbyAuthenticatedUserRequest
+      required:
+        - company
+        - position
+      type: object
+      properties:
+        company:
+          type: string
+        position:
+          type: string
+      example:
+        company: microsoft
+        position: position of som5 one in infosys
+    UpdatejobbyanauthenticateduserRequest:
+      title: UpdatejobbyanauthenticateduserRequest
+      required:
+        - company
+        - position
+      type: object
+      properties:
+        company:
+          type: string
+        position:
+          type: string
+      example:
+        company: adobe
+        position: manager at adobe
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security: []
+tags:
+  - name: Users
+  - name: Jobs
+    description: ""

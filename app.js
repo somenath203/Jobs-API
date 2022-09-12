@@ -5,6 +5,10 @@ const helmet = require('helmet');
 const cors = require('cors');
 const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit');
+const swaggerUI = require('swagger-ui-express');
+const YAML = require('yamljs');
+
+const swaggerDocument = YAML.load('./swagger.yaml');
 
 const app = express();
 
@@ -45,6 +49,8 @@ app.get('/', (req, res) => {
   res.status(200).sendFile('index.html');
 
 });
+
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 
 app.use('/api/v1/auth', authRouter);
