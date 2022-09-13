@@ -42,7 +42,7 @@ After you have copied the token, you need to click on the "Authorize" option pre
 
 ### Step 3
 
-After you click on the "Authorize", you will for value. In the value's input field, just paste the token and click on "Authorize"
+After you click on the "Authorize", you will be asked to enter input for the 'value' field. In the value's input field, just paste the token and click on "Authorize"
 
 ![Alt text](./authedd.png "Title")
 
