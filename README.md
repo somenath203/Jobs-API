@@ -3,7 +3,7 @@
 This is a Restful API created with express.js.
 
 Here, a recruiter who wants to hire candidates for his/her company can use this API.
-Here, in this API, the recruiter first needs to register for an account. Then, the recruiter can create as many job openings as possible and all the job openings created by the recruiter will be stored in his/her account.
+Here, in this API, the recruiter first needs to register for an account and after the user creates an account, he/she will receive a email in his/her email inbox regarding her registration. Then, the recruiter can create as many job openings as possible and all the job openings created by the recruiter will be stored in his/her account.
 
 The recruiter also has the option of editing a particular job posting as well as deleting a particular job.
 
