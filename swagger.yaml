@@ -44,7 +44,7 @@ paths:
       deprecated: false
       security: []
       servers:
-        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+        - url: https://jobs-api-production-aa72.up.railway.app/api/v1
           variables: {}
   /auth/login:
     post:
@@ -75,7 +75,7 @@ paths:
       deprecated: false
       security: []
       servers:
-        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+        - url: https://jobs-api-production-aa72.up.railway.app/api/v1
           variables: {}
   /jobs:
     get:
@@ -93,7 +93,7 @@ paths:
       security:
         - bearer: []
       servers:
-        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+        - url: https://jobs-api-production-aa72.up.railway.app/api/v1
           variables: {}
     post:
       tags:
@@ -124,7 +124,7 @@ paths:
       security:
         - bearer: []
       servers:
-        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+        - url: https://jobs-api-production-aa72.up.railway.app/api/v1
           variables: {}
   /jobs/{id}:
     parameters:
@@ -149,7 +149,7 @@ paths:
       security:
         - bearer: []
       servers:
-        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+        - url: https://jobs-api-production-aa72.up.railway.app/api/v1
           variables: {}
     patch:
       tags:
@@ -180,7 +180,7 @@ paths:
       security:
         - bearer: []
       servers:
-        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+        - url: https://jobs-api-production-aa72.up.railway.app/api/v1
           variables: {}
     delete:
       tags:
@@ -197,7 +197,7 @@ paths:
       security:
         - bearer: []
       servers:
-        - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
+        - url: https://jobs-api-production-aa72.up.railway.app/api/v1
           variables: {}
 components:
   schemas:
