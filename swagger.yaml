@@ -10,8 +10,7 @@ info:
   version: "1.0"
 Access-Control-Allow-Origin: '*'
 servers:
-  - url: https://jobs-som-restful-api-prod.herokuapp.com/api/v1
-  - url: https://jobs-api-production-25fc.up.railway.app/api/v1
+  - url: ''
     variables: {}
 paths:
   /auth/register:
