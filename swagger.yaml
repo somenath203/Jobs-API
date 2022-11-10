@@ -11,6 +11,7 @@ info:
 Access-Control-Allow-Origin: '*'
 servers:
   - url: 'https://jobs-api-production-aa72.up.railway.app/api/v1'
+  - url: 'http://localhost:3000/api/v1'
     variables: {}
 paths:
   /auth/register:
@@ -45,6 +46,7 @@ paths:
       security: []
       servers:
         - url: https://jobs-api-production-aa72.up.railway.app/api/v1
+        - url: 'http://localhost:3000/api/v1'
           variables: {}
   /auth/login:
     post:
@@ -76,6 +78,7 @@ paths:
       security: []
       servers:
         - url: https://jobs-api-production-aa72.up.railway.app/api/v1
+        - url: 'http://localhost:3000/api/v1'
           variables: {}
   /jobs:
     get:
@@ -94,6 +97,7 @@ paths:
         - bearer: []
       servers:
         - url: https://jobs-api-production-aa72.up.railway.app/api/v1
+        - url: 'http://localhost:3000/api/v1'
           variables: {}
     post:
       tags:
@@ -125,6 +129,7 @@ paths:
         - bearer: []
       servers:
         - url: https://jobs-api-production-aa72.up.railway.app/api/v1
+        - url: 'http://localhost:3000/api/v1'
           variables: {}
   /jobs/{id}:
     parameters:
@@ -150,6 +155,7 @@ paths:
         - bearer: []
       servers:
         - url: https://jobs-api-production-aa72.up.railway.app/api/v1
+        - url: 'http://localhost:3000/api/v1'
           variables: {}
     patch:
       tags:
@@ -181,6 +187,7 @@ paths:
         - bearer: []
       servers:
         - url: https://jobs-api-production-aa72.up.railway.app/api/v1
+        - url: 'http://localhost:3000/api/v1'
           variables: {}
     delete:
       tags:
@@ -198,6 +205,7 @@ paths:
         - bearer: []
       servers:
         - url: https://jobs-api-production-aa72.up.railway.app/api/v1
+        - url: 'http://localhost:3000/api/v1'
           variables: {}
 components:
   schemas:

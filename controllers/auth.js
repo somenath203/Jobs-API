@@ -69,8 +69,8 @@ const login = async (req, res) => {
     const emailStructure = {
         to: req.body.email,
         from: 'somenathchoudhury212@gmail.com',
-        subject: 'Successful log-in in Jobs API',
-        text: `Dear ${user.fullname}, you have successfully logged in inside Jobs API.`
+        subject: 'Login Successful',
+        text: `Dear ${user.fullname}, you have successfully logged in Jobs API.`
     }
 
     await sgMail.send(emailStructure);
